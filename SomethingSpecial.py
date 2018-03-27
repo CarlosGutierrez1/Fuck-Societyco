@@ -61,6 +61,7 @@ def send_email(eldue,destinatario,usuario,lacontra,message):
         server.sendmail(fromaddr, toaddrs, message)
         server.quit()
 
+
     except:
 
         e= "Error al enviar el correo"
