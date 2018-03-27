@@ -1,5 +1,5 @@
 ##Nombre del solicitador
--{}
+-[]
 
 ##¿Que se le ha agregado?
 -
