@@ -18,16 +18,15 @@ num = 0
 
 desc = "\033[1;33m"+'''
         +=========================================+
-        |.............ApolusCracker...............|
+        |...........SomethingSpecial..............|
         +-----------------------------------------+
-        |#Apoluscracker  a tool for easy spreading|
-        |#Author: XxApolus12xX                    |
+        |#Author: Apolus12                        |
         |#Contact: apolus12@outlook.com           |
-        |#Date: 15/03/18                          |
+        |#Date: 26/03/18                          |
         |#I take no responsibilities for the      |
         |  use of this tool!                      |
         +=========================================+
-        |.............ApolusCracker...............|
+        |...........SomethingSpecial..............|
         +-----------------------------------------+
 '''+"\033[0;0m"
 
@@ -81,7 +80,7 @@ def send_email(eldue,destinatario,usuario,lacontra,message):
 
 def casos(unnumero):
     if(unnumero=="1"):
-        print("el primero")
+        print("Esta opcion aun no esta desarrollada\r\n"+"Coming soon")
     elif(unnumero=="2"):
         print("Abriendo Shodan.io")
         os.system('start https://www.shodan.io/')
@@ -94,13 +93,13 @@ def casos(unnumero):
         os.system("cls")
         print("")
         print("")
-        print("                             Su ip publica es: "+"\033[1;34m"+ public_ip()+"\033[0;0m")
+        print("                                     Su ip publica es: "+"\033[1;34m"+ public_ip()+"\033[0;0m")
         print("")
         print("")
 
     elif(unnumero=="4"):
         primercorreo = input("Ingrese el correo desde el cual se enviara: ")
-        eldestino = input("Ingrese el correo destinatario:  ")qa
+        eldestino = input("Ingrese el correo destinatario:  ")
         elusuario = input("Ingrese el usuario de la cuenta:  ")
         lacontraseña = getpass.getpass('Ingrese la contraseña de la cuenta:')
         elmensaje = input("Ingrese el mensaje del correo: ")
