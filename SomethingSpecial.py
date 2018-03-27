@@ -16,6 +16,8 @@ colorama.init()
 num = 0
 
 
+
+
 desc = "\033[1;33m"+'''
         +=========================================+
         |...........SomethingSpecial..............|
@@ -64,19 +66,7 @@ def send_email(eldue,destinatario,usuario,lacontra,message):
         e= "Error al enviar el correo"
         return e
 
-"""def irashodan:"""
 
-
-"""def loscasos(elnumero):
-
-    switch elnumero:
-        case 1:
-        print("el uno")
-        break
-        case 2:
-        print("el dos")
-        break
-"""
 
 def casos(unnumero):
     if(unnumero=="1"):
