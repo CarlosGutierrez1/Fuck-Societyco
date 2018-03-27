@@ -99,6 +99,10 @@ def casos(unnumero):
         print("")
         print("")
     elif(unnumero=="5"):
+        site = input("Ingrese el sitio, ejemplo(www.google.com):  ")
+        coman = ("ping " + site)
+        os.system(coman)
+    elif(unnumero=="6"):
         os.system("cls")
         sys.exit()
     else:
@@ -111,7 +115,8 @@ while True:
     print("\033[1;31m"+"[2]"+"\033[0;0m"+ "\033[1;37m"+"Open Shodan"+"\033[0;0m")
     print("\033[1;31m"+"[3]"+"\033[0;0m"+ "\033[1;37m"+"Know ip public"+"\033[0;0m")
     print("\033[1;31m"+"[4]"+"\033[0;0m"+ "\033[1;37m"+"Send e-mail"+"\033[0;0m")
-    print("\033[1;31m"+"[5]"+"\033[0;0m"+ "\033[1;37m"+"Exit"+"\033[0;0m")
+    print("\033[1;31m"+"[5]"+"\033[0;0m"+ "\033[1;37m"+"Use command ºpingª"+"\033[0;0m")
+    print("\033[1;31m"+"[6]"+"\033[0;0m"+ "\033[1;37m"+"Exit"+"\033[0;0m")
     print("")
     num = input("type an option: ")
     casos(num)
