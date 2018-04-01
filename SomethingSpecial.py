@@ -44,28 +44,32 @@ def public_ip():
 			ip += x
 	return ip
 
-def send_email(eldue,destinatario,usuario,lacontra,message):
+def send_email(eldue,destinatario,usuario,lacontra,message,smtp):
 
     try:
 
-        # Datos
+
         fromaddr = eldue
         toaddrs = destinatario
         username = usuario
         password = lacontra
-
-        # Enviando el correo
-        server = smtplib.SMTP('smtp.gmail.com:587')
+        serv = smtp
+        server = smtplib.SMTP(serv)
         server.starttls()
         server.login(username,password)
         server.sendmail(fromaddr, toaddrs, message)
         server.quit()
-
+        os.system("cls")
+        print("")
+        print("")
+        print("                                                      \033[1;34m"+"Perfecto, enviado!"+"\033[0;0m")
 
     except:
-
-        e= "Error al enviar el correo"
-        return e
+        os.system("cls")
+        print("")
+        print("")
+        e= ("                                        \033[1;31m"+"Error al enviar el correo, intente de nuevo :/"+"\033[0;0m")
+        print(e)
 
 
 
@@ -89,16 +93,46 @@ def casos(unnumero):
         print("")
 
     elif(unnumero=="4"):
-        primercorreo = input("Ingrese el correo desde el cual se enviara: ")
-        eldestino = input("Ingrese el correo destinatario:  ")
-        elusuario = input("Ingrese el usuario de la cuenta:  ")
-        lacontraseña = getpass.getpass('Ingrese la contraseña de la cuenta:')
-        elmensaje = input("Ingrese el mensaje del correo: ")
+        print("Servicios de mensajeria")
+        print("\033[1;31m"+"[1]"+"\033[0;0m" + "\033[1;37m"+"Gmail"+"\033[0;0m")
+        print("\033[1;31m"+"[2]"+"\033[0;0m" + "\033[1;37m"+"cooming"+"\033[0;0m")
+        print("\033[1;31m"+"[3]"+"\033[0;0m" + "\033[1;37m"+"Smtp personalizado"+"\033[0;0m")
+        sel = input("Que servicio de mensajeria desea utilizar, seleccione una opcion:  ")
+        if sel=="1":
+            try:
+                primcorreo = input("Ingrese el asunto: ")
+                eldes = input("Ingrese el correo destinatario:  ")
+                elus = input("Ingrese el usuario de la cuenta: ")
+                lacon = getpass.getpass("Ingrese la contraseña de la cuenta:  ")
+                elmen = input("Ingrese el mensaje del correo: ")
+                smtp0 = "smtp.gmail.com:587"
+                send_email(primcorreo, eldes, elus, lacon, elmen,smtp0)
 
-        send_email(primercorreo, eldestino, elusuario, lacontraseña, elmensaje)
-        print("E-mail enviado correctamente :D")
-        print("")
-        print("")
+                print("")
+                print("")
+            except:
+                print("Error en los datos")
+        elif(sel=="cooming"):
+            primercorreo = input("Ingrese el correo desde el cual se enviara: ")
+            eldestino = input("Ingrese el correo destinatario:  ")
+            elusuario = input("Ingrese el usuario de la cuenta:  ")
+            lacontraseña = getpass.getpass('Ingrese la contraseña de la cuenta:')
+            elmensaje = input("Ingrese el mensaje del correo: ")
+            smtp1 = "smtp-mail.outlook.com:587"
+            send_email(primercorreo, eldestino, elusuario, lacontraseña, elmensaje,smtp1)
+
+            print("")
+            print("")
+        elif(sel=="3"):
+            primercorreo = input("Ingrese el correo desde el cual se enviara: ")
+            eldestino = input("Ingrese el correo destinatario:  ")
+            elusuario = input("Ingrese el usuario de la cuenta:  ")
+            lacontraseña = getpass.getpass('Ingrese la contraseña de la cuenta:')
+            elmensaje = input("Ingrese el mensaje del correo: ")
+            smtp2 = input("Ingrese el smtp - " +"ejemplo(smtp.mail.com:234)" )
+            send_email(primercorreo, eldestino, elusuario, lacontraseña, elmensaje,smtp2)
+            print("")
+            print("")
     elif(unnumero=="5"):
         site = input("Ingrese el sitio, ejemplo(www.google.com):  ")
         coman = ("ping " + site)
